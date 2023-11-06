@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 
-employees = pd.read_csv('level_up_data.csv')
+employees = pd.read_csv('/Users/modifero/VSCode/linkedin-python-level-up/level-up-python-data-acquisitions-prep-EDA-3083218/data/level_up_data.csv')
 
 def z_score_maker(variable):
   variable_mean = variable.mean()
@@ -17,9 +17,12 @@ viz_variables = ['prior_job_count', 'days_to_separate',
 for i in viz_variables:  
   employees[i] = z_score_maker(employees[i])
 
+employees  
+
 employees_melted = employees.melt(id_vars = 'department', 
   value_vars = viz_variables)
-  
+
+#employees_melted.groupby('department').value_counts()  
 g = sns.catplot(x="value", y="variable",
                 hue="department", 
                 data=employees_melted,

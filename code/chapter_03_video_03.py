@@ -3,7 +3,12 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 
-employees = pd.read_csv('level_up_data.csv')
+pd.set_option('display.max_rows', 15)
+pd.set_option('display.max_columns',None)
+pd.set_option('display.width', None)
+pd.options.display.float_format = '{:.2f}'.format
+
+employees = pd.read_csv('/Users/modifero/VSCode/linkedin-python-level-up/level-up-python-data-acquisitions-prep-EDA-3083218/data/level_up_data.csv')
 
 data_types = employees.dtypes
 

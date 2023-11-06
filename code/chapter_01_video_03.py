@@ -21,7 +21,7 @@ table = pd.read_html(link, match = "Capital")
 
 table = table.pop()
 
-table = table.append(state_data)
+table = table._append(state_data)
 
 table = table.rename(columns={0: "info", 1: "stat"})
 
@@ -29,4 +29,6 @@ table = table.pivot(columns = "info", values = "stat")
 
 table_fill = table.bfill()
 
-table_fill.drop(range(1, len(table_fill)))
+table_fill_final = table_fill.drop(range(1, len(table_fill)))
+
+pd.DataFrame(table_fill_final)

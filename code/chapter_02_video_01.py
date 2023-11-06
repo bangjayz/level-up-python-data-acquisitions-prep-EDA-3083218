@@ -6,7 +6,7 @@ dollar_data = pd.DataFrame(dollar_values)
 
 dollar_data['dollar_values'].mean()
 
-dollar_data['dollar_values'] = dollar_data['dollar_values'].str.replace('\\$', '')
+dollar_data['dollar_values'] = dollar_data['dollar_values'].str.replace('$', '')
 
 dollar_data['dollar_values'] = dollar_data['dollar_values'].str.replace(',(?=[0-9]{2}$)', '')
 
